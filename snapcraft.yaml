@@ -1,0 +1,29 @@
+name: noip-client
+version: 2.1.9
+summary: No-IP Dynamic DNS Update Client for Linux
+description: |
+  Keep your current IP address in sync with your No-IP host or domain
+  with No-IP's Dynamic Update Client (DUC).
+  (Unoffical)
+
+apps:
+  noip-client:
+    command: bin/noip2
+    plugs: [network]
+  configure:
+    command: configure
+    plugs: [network]
+  launcher:
+    daemon: forking
+    command: launcher
+    plugs: [network]
+
+grade: stable
+confinement: strict
+
+parts:
+  client:
+#    make-parameters: ["-C","noip-2.1.9-1"]
+#    make-install-var: PREFIX
+    source: src
+    plugin: make

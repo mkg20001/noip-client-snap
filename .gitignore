@@ -1,0 +1,7 @@
+parts
+prime
+stage
+build.sh
+deploy.sh
+upload.sh
+*.snap
